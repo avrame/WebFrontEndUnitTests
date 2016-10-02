@@ -17,5 +17,9 @@ nc-button {
     width: $button-width;
     height: $button-width;
     font-size: $font-size;
+
+    &.power-button {
+      font-size: 1rem;
+    }
   }
 }
