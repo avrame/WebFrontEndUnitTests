@@ -19,13 +19,11 @@ describe("ncNum", () => {
             $compile(element1)($scope);
             $compile(element2)($scope);
             $compile(element3)($scope);
-            const controller1 = element1.controller("ncNum");
-            const controller2 = element2.controller("ncNum");
-            const controller3 = element3.controller("ncNum");
 
-            controller1.click();
-            controller2.click();
-            controller3.click();
+            element1.children().triggerHandler('click');
+            element2.children().triggerHandler('click');
+            element3.children().triggerHandler('click');
+            $scope.$apply();
 
             expect(InputService.num).to.equal(123);
         });
